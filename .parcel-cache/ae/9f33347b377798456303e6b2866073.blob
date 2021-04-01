@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 62.5%;
+  background-color: #fafafa;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #fff;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+/*# sourceMappingURL=index.HASH_REF_dc55b526e9452380290ae46419fc6157.css.map */

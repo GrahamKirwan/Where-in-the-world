@@ -5,6 +5,8 @@
 // - Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
 // - White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
 
+$lightGrey: hsl(0, 0%, 98%);
+
 * {
     margin: 0;
     padding: 0;
@@ -15,5 +17,30 @@ html,
 body {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 62.5%;
-    background-color: aqua;
+    background-color: $lightGrey;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #fff;
+    padding: 2rem 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .theme {
+
+    }
 }
