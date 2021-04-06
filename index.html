@@ -25,7 +25,7 @@
         <div class="container">
         <div class="inputs_search">
             <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search for a country...">
+            <input type="text" id="search-input" placeholder="Search for a country...">
         </div>
             <select name="regions" id="regions" class="inputs_filter">
                 <option value="" disabled selected>Filter by Region</option>
@@ -35,6 +35,24 @@
                 <option value="Europe">Europe</option>
                 <option value="Ocenia">Ocenia</option>
             </select>
+        </div>
+    </section>
+
+    <section class="results">
+        <div class="container" id="results-container">
+            <div class="results_card">
+                <div class="results_card--image">
+                    <img src="https://restcountries.eu/data/irl.svg" alt="">
+                </div>
+                <div class="results_card_details">
+                    <h2 class="results_card_details--heading">Ireland</h2>
+                    <p class="results_card_details--pop"><strong>Population:</strong> 81,770,900</p>
+                    <p class="results_card_details--region"><strong>Region:</strong> Europe</p>
+                    <p class="results_card_details--cap"><strong>Capital:</strong> Dublin</p>
+                </div>
+            </div>
+
+            
         </div>
     </section>
     <!-- https://restcountries.eu/ -->

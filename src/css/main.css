@@ -42,6 +42,7 @@ header h1 {
 
 header .theme p {
   font-size: 2rem;
+  font-weight: 600;
 }
 
 header .theme p i {
@@ -50,6 +51,7 @@ header .theme p i {
 
 .inputs {
   margin-top: 7rem;
+  margin-bottom: 7rem;
 }
 
 .inputs .container {
@@ -124,5 +126,50 @@ header .theme p i {
   color: #858585;
   opacity: 1;
   /* Firefox */
+}
+
+.results .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.results_card {
+  width: 21%;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 7rem;
+}
+
+.results_card--image {
+  height: 20rem;
+}
+
+.results_card--image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.results_card_details {
+  padding: 2rem;
+  padding-bottom: 4rem;
+}
+
+.results_card_details--heading {
+  font-size: 1.9rem;
+  padding-bottom: 2rem;
+}
+
+.results_card_details--pop, .results_card_details--region, .results_card_details--cap {
+  font-size: 15px;
+  padding-bottom: .7rem;
 }
 /*# sourceMappingURL=main.css.map */
