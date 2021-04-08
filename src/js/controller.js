@@ -68,5 +68,5 @@ regions.addEventListener('change', function(e){
     resultsContainer.innerHTML = '';
     findRegions(region);
     
-})
+});
 
