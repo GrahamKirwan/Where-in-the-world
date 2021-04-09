@@ -1,6 +1,7 @@
 const input = document.querySelector('#search-input');
 const resultsContainer = document.querySelector('#results-container');
 const regions = document.querySelector('#regions');
+const theme = document.querySelector('#colour-theme');
 
 
 const apiCall = async function(country) {
@@ -70,3 +71,7 @@ regions.addEventListener('change', function(e){
     
 });
 
+
+theme.addEventListener('click', function(){
+    theme.innerHTML = '<i class="far fa-moon"></i> Light Mode';
+})

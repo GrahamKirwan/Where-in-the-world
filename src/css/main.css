@@ -38,11 +38,14 @@ header .container {
 
 header h1 {
   font-size: 2.5rem;
+  color: #000;
 }
 
 header .theme p {
   font-size: 2rem;
   font-weight: 600;
+  cursor: pointer;
+  color: #000;
 }
 
 header .theme p i {
@@ -134,6 +137,8 @@ header .theme p i {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-transform: scale(1.04) translateY(20px);
+          transform: scale(1.04) translateY(20px);
 }
 
 .results_card {
