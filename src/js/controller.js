@@ -2,7 +2,8 @@ const input = document.querySelector('#search-input');
 const resultsContainer = document.querySelector('#results-container');
 const regions = document.querySelector('#regions');
 const theme = document.querySelector('#colour-theme');
-let cards = document.querySelectorAll('.results_card');
+const countryOverlay = document.querySelector('.country_info');
+const backBtn = document.querySelector('.back_btn');
 
 
 const apiCall = async function(country) {
@@ -34,7 +35,7 @@ const findRegions = async function(region) {
 function generateHtml(flag, population, region, country, capital) {
 
     let html =  `
-        <div class="results_card">
+        <div class="results_card" name="${country}">
         <div class="results_card--image">
             <img src="${flag}" alt="${country}">
         </div>
@@ -48,8 +49,6 @@ function generateHtml(flag, population, region, country, capital) {
     `
 
     resultsContainer.insertAdjacentHTML('afterbegin', html);
-    cards = document.querySelectorAll('.results_card');
-    listenForCardClicks();
 
 }
 
@@ -79,23 +78,21 @@ theme.addEventListener('click', function(){
     theme.innerHTML = '<i class="far fa-moon"></i> Light Mode';
 });
 
+// Listen on card container for a click
+resultsContainer.addEventListener('click', function(e){
+    if(e.path[0].hasAttribute('alt')) {
+        let country = e.path[2].getAttribute('name');
+        renderCountryDetails(country);
+    }
+})
 
-
-function listenForCardClicks() {
-    let countryClicked;
-    cards.forEach(item => {
-        item.addEventListener('click', event => {
-          countryClicked = event.path[0].alt;
-          renderClickedCountry(countryClicked);
-        })
-
-    });
-
-};
-
-listenForCardClicks();
-
-
-function renderClickedCountry(countryClicked) {
-    console.log(countryClicked);
+function renderCountryDetails(country) {
+    countryOverlay.style.display = 'initial';
+    resultsContainer.style.display = 'none';
 }
+
+backBtn.addEventListener('click', function(){
+    countryOverlay.style.display = 'none';
+    resultsContainer.style.display = 'flex';
+
+})
