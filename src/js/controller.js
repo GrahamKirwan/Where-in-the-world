@@ -2,6 +2,7 @@ const input = document.querySelector('#search-input');
 const resultsContainer = document.querySelector('#results-container');
 const regions = document.querySelector('#regions');
 const theme = document.querySelector('#colour-theme');
+let cards = document.querySelectorAll('.results_card');
 
 
 const apiCall = async function(country) {
@@ -46,8 +47,10 @@ function generateHtml(flag, population, region, country, capital) {
         </div>
     `
 
-    console.log(html)
     resultsContainer.insertAdjacentHTML('afterbegin', html);
+    cards = document.querySelectorAll('.results_card');
+    listenForCardClicks();
+
 }
 
 function breakNum(pop) {
@@ -74,4 +77,25 @@ regions.addEventListener('change', function(e){
 
 theme.addEventListener('click', function(){
     theme.innerHTML = '<i class="far fa-moon"></i> Light Mode';
-})
+});
+
+
+
+function listenForCardClicks() {
+    let countryClicked;
+    cards.forEach(item => {
+        item.addEventListener('click', event => {
+          countryClicked = event.path[0].alt;
+          renderClickedCountry(countryClicked);
+        })
+
+    });
+
+};
+
+listenForCardClicks();
+
+
+function renderClickedCountry(countryClicked) {
+    console.log(countryClicked);
+}

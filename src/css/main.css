@@ -101,6 +101,7 @@ header .theme p i {
   padding-right: 2rem;
   -webkit-box-shadow: 0px 7px 23px 4px rgba(133, 133, 133, 0.21);
   box-shadow: 0px 7px 23px -4px rgba(133, 133, 133, 0.21);
+  color: #000;
 }
 
 ::-webkit-input-placeholder {
@@ -137,8 +138,6 @@ header .theme p i {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-transform: scale(1.04) translateY(20px);
-          transform: scale(1.04) translateY(20px);
 }
 
 .results_card {
@@ -151,6 +150,7 @@ header .theme p i {
   margin: 0 2% 4% 2%;
   -webkit-box-shadow: 0px 7px 23px -4px rgba(133, 133, 133, 0.21);
           box-shadow: 0px 7px 23px -4px rgba(133, 133, 133, 0.21);
+  cursor: pointer;
 }
 
 .results_card--image {
@@ -175,5 +175,16 @@ header .theme p i {
 .results_card_details--pop, .results_card_details--region, .results_card_details--cap {
   font-size: 15px;
   padding-bottom: .7rem;
+}
+
+.country_info {
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+  position: absolute;
+  z-index: 100;
+  display: none;
+  background-color: #fafafa;
 }
 /*# sourceMappingURL=main.css.map */
