@@ -142,7 +142,7 @@ header {
             img {
                 height: 100%;
                 width: 100%;
-                // object-fit: cover;
+                object-fit: cover;
             }
         }
 
@@ -180,7 +180,7 @@ header {
 
     .back_btn {
         font-size: 1.8rem;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);        display: inline-block;
+        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);        display: inline-block;
         padding: 10px 30px;
         border-radius: 4px;
         cursor: pointer;
@@ -214,7 +214,42 @@ header {
             margin-top: 4rem;
 
             &--heading {
-                font-size: 2.8rem;
+                font-size: 3.8rem;
+            }
+
+            &--info {
+                display: flex;
+                justify-content: space-between;
+                margin: 4rem 0;
+
+                p {
+                    font-size: 1.8rem;
+                    padding-bottom: 1.3rem;
+                }
+            }
+
+            &--borders {
+
+                p {
+                    font-size: 1.8rem;
+                    padding-bottom: 1.3rem;
+
+
+
+                    span {
+                        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);        display: inline-block;
+                        padding: 8px 25px;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        margin-right: 1.5rem;
+
+                        &:first-of-type {
+                            margin-left: 2rem;
+                        }
+                    }
+
+
+                }
             }
         }
     }
