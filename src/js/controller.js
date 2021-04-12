@@ -50,6 +50,7 @@ const countryInfo = async function(country) {
         currencies = data[0].currencies[0].name;
         languages = data[0].languages;
         borders = data[0].borders;
+        borders = await apiCallBorder(borders);
         generateInfoHtml(flag, population, region, name, capital, currencies, topLevelDomain, nativeName, subRegion, languages, borders)
     
 }
@@ -96,10 +97,28 @@ regions.addEventListener('change', function(e){
     
 });
 
-
+let boo = true;
 theme.addEventListener('click', function(){
-    theme.innerHTML = '<i class="far fa-moon"></i> Light Mode';
+
+    if(boo){
+        theme.innerHTML = '<i class="far fa-moon"></i> Light Mode';
+        makeDark();
+        boo = false;
+    } else {
+        theme.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+        makeLight();
+        boo = true;
+    }
 });
+
+function makeLight() {
+    console.log('you just choose light mode');
+} 
+
+function makeDark() {
+    console.log('you just choose dark mode');
+
+}
 
 // Listen on card container for a click
 resultsContainer.addEventListener('click', function(e){
@@ -136,7 +155,7 @@ function generateInfoHtml(flag, population, region, name, capital, currencies, t
                 <div class="info_container_right--info">
                     <div class="info_container_right--info--left">
                         <p><strong>Native Name: </strong>${nativeName}</p>
-                        <p><strong>Population: </strong>${population}</p>
+                        <p><strong>Population: </strong>${breakNum(population)}</p>
                         <p><strong>Region: </strong>${region}</p>
                         <p><strong>Sub Region: </strong>${subRegion}</p>
                         <p><strong>Capital: </strong>${capital}</p>
@@ -144,16 +163,44 @@ function generateInfoHtml(flag, population, region, name, capital, currencies, t
                     <div class="info_container_right--info--right">
                         <p><strong>Top Level Domain: </strong>${topLevelDomain}</p>
                         <p><strong>Currencies: </strong>${currencies}</p>
-                        <p><strong>Languages: </strong>${languages}</p>
+                        <p><strong>Languages: </strong>${breakLang(languages)}</p>
                     </div>
                 </div>
                 <div class="info_container_right--borders">
-                    <p><strong>Border Countries: </strong><span>France</span><span>Germany</span><span>Netherlands</span></p>
+                    <p><strong>Border Countries: </strong>${borders}</p>
                 </div>
             </div>
         </div>
     `
     
     infoContainer.insertAdjacentHTML('beforeend', html);
+
+}
+
+function breakLang(languages) {
+    let string = '';
+    for(let i=0; i<languages.length; i++){
+        string = string + languages[i].name + ' ';
+    }
+    return string;
+}
+
+
+const apiCallBorder = async function(borders) {
+    let names = [];
+    let stringHtml = '';
+
+    for(let i=0; i<borders.length; i++){
+        let res = await fetch(`https://restcountries.eu/rest/v2/alpha/${borders[i]}`);
+        let data = await res.json();
+        names.push(data.name);
+    }
+
+    for(let x=0; x<names.length; x++){
+        stringHtml = stringHtml + `<span>${names[x]}</span>`;
+    }
+    // return '<span>France</span><span>Germany</span><span>Netherlands</span>';
+    return stringHtml;
+    
 
 }
