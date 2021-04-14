@@ -38,7 +38,7 @@ body {
 header {
     background-color: var(--white);
     padding: 2.3rem 0;
-    box-shadow: 1px 3px 4px -2px rgba(133,133,133,0.54);
+    box-shadow: 1px 3px 4px -2px rgba(0, 0, 0, 0.2);
 
     .container {
         display: flex;
@@ -94,10 +94,11 @@ header {
             outline: none;
             border: none;
             border-radius: 4px;
-            padding-left: 6rem;
-            -webkit-box-shadow: 0px 7px 23px 4px rgba(133,133,133,0.21); 
-            box-shadow: 0px 7px 23px -4px rgba(133,133,133,0.21);   
+            padding-left: 6rem; 
+            box-shadow: 0px 7px 23px -4px rgba(0, 0, 0, 0.2);        
+
             color: var(--dark-grey);
+            background-color: var(--white);
 
         }
     }
@@ -110,9 +111,10 @@ header {
         border-radius: 4px;
         padding-left: 2rem;
         padding-right: 2rem;
-        -webkit-box-shadow: 0px 7px 23px 4px rgba(133,133,133,0.21); 
-        box-shadow: 0px 7px 23px -4px rgba(133,133,133,0.21);   
+        box-shadow: 0px 7px 23px -4px rgba(0, 0, 0, 0.2);   
         color: var(--black);
+        background-color: var(--white);
+
     }
 
 }
@@ -139,7 +141,7 @@ header {
         margin-bottom: 7rem;
         width: calc(100% * (1/4) - 4%);
         margin: 0 2% 4% 2%;
-        box-shadow: 0px 7px 23px -4px rgba(133,133,133,0.21);   
+        box-shadow: 0px 7px 23px -4px rgba(0, 0, 0, 0.2);   
         color: var(--black);
 
         &--image {
@@ -187,10 +189,13 @@ header {
 
     .back_btn {
         font-size: 1.8rem;
-        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);        display: inline-block;
+        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);        
+        display: inline-block;
         padding: 10px 30px;
         border-radius: 4px;
         cursor: pointer;
+        color: var(--black);
+        background-color: var(--white);
 
         i {
             transform: translateY(1px);
@@ -219,6 +224,7 @@ header {
         &_right {
             width: 45%;
             margin-top: 4rem;
+            color: var(--black);
 
             &--heading {
                 font-size: 3.8rem;

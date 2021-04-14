@@ -113,11 +113,12 @@ theme.addEventListener('click', function(){
 
 function makeLight() {
     console.log('you just choose light mode');
+    myFunction_set_light();
 } 
 
 function makeDark() {
     console.log('you just choose dark mode');
-
+    myFunction_set_dark();
 }
 
 // Listen on card container for a click
@@ -209,22 +210,19 @@ const apiCallBorder = async function(borders) {
 // Get the root element
 var r = document.querySelector(':root');
 
-// Create a function for getting a variable value
-function myFunction_get() {
-  // Get the styles (properties and values) for the root
-  var rs = getComputedStyle(r);
-  // Alert the value of the --blue variable
-  alert("The value of --light-bg is: " + rs.getPropertyValue('--light-bg'));
-}
-
 // Create a function for setting a variable value
-function myFunction_set() {
-  // Set the value of variable --blue to another value (in this case "lightblue")
+function myFunction_set_dark() {
   r.style.setProperty('--light-bg', 'hsl(207, 26%, 17%)');
   r.style.setProperty('--white', 'hsl(209, 23%, 22%)');
   r.style.setProperty('--black', '#fff');
-  r.style.setProperty('--dark-grey', 'hsl(207, 26%, 17%)');
+  r.style.setProperty('--dark-grey', '#fff');
+}
+function myFunction_set_light() {
+    r.style.setProperty('--light-bg', 'hsl(0, 0%, 98%)');
+    r.style.setProperty('--white', 'hsl(0, 0%, 100%)');
+    r.style.setProperty('--black', '#000');
+    r.style.setProperty('--dark-grey', 'hsl(0, 0%, 52%)');
 }
 
-// myFunction_get();
-// myFunction_set();
+// Load in Europe countries on load
+findRegions('Europe');
