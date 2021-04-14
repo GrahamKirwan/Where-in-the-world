@@ -5,6 +5,8 @@ const theme = document.querySelector('#colour-theme');
 const countryOverlay = document.querySelector('.country_info');
 const backBtn = document.querySelector('.back_btn');
 const infoContainer = document.querySelector('#info-container');
+const regionDropdown = document.querySelector('.inputs_filter_dropdown');
+const regionFilter = document.querySelector('.inputs_filter');
 
 
 
@@ -90,12 +92,26 @@ input.addEventListener('keyup', function(e) {
 
 })
 
-regions.addEventListener('change', function(e){
-    let region = regions.value;
-    resultsContainer.innerHTML = '';
-    findRegions(region);
+// regions.addEventListener('change', function(e){
+//     let region = regions.value;
+//     resultsContainer.innerHTML = '';
+//     findRegions(region);
     
+// });
+
+regionFilter.addEventListener('click', function(){
+    regionDropdown.classList.toggle("displayed");
 });
+
+regionDropdown.addEventListener('click', function(e){
+    if(e.path[0].attributes.value.textContent){
+        let region = e.path[0].attributes.value.textContent;
+        resultsContainer.innerHTML = '';
+        findRegions(region);
+        regionDropdown.classList.toggle("displayed");
+    }
+});
+
 
 let boo = true;
 theme.addEventListener('click', function(){

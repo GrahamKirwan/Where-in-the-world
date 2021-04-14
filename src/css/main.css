@@ -75,6 +75,7 @@ header .theme p i {
 
 .inputs_search {
   position: relative;
+  height: 100%;
 }
 
 .inputs_search i {
@@ -105,12 +106,49 @@ header .theme p i {
   outline: none;
   border: none;
   border-radius: 4px;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 1.7rem;
+  cursor: pointer;
   -webkit-box-shadow: 0px 7px 23px -4px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 7px 23px -4px rgba(0, 0, 0, 0.2);
   color: var(--black);
   background-color: var(--white);
+}
+
+.inputs_filter p {
+  font-size: 1.3rem;
+}
+
+.inputs_filter p i {
+  padding-left: 3rem;
+  font-size: 1.1rem;
+}
+
+.inputs_filter_dropdown {
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 1.7rem;
+  -webkit-box-shadow: 0px 7px 23px -4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 7px 23px -4px rgba(0, 0, 0, 0.2);
+  color: var(--black);
+  background-color: var(--white);
+  font-size: 1.3rem;
+  margin-top: 3px;
+  position: absolute;
+  width: 100%;
+}
+
+.inputs_filter_dropdown p {
+  padding-bottom: .8rem;
+  cursor: pointer;
+}
+
+.inputs_filter_dropdown p:last-of-type {
+  padding-bottom: 0;
+}
+
+.displayed {
+  display: none;
 }
 
 ::-webkit-input-placeholder {
@@ -185,7 +223,7 @@ header .theme p i {
 }
 
 .results_card_details--pop, .results_card_details--region, .results_card_details--cap {
-  font-size: 15px;
+  font-size: 1.5rem;
   padding-bottom: .7rem;
 }
 
