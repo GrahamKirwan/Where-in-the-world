@@ -277,6 +277,7 @@ header .theme p i {
   border-radius: 4px;
   margin-right: 1.5rem;
   margin-bottom: 2rem;
+  background-color: var(--white);
 }
 
 .country_info .info_container_right--borders p span:first-of-type {
