@@ -24,7 +24,21 @@ const apiCall = async function(country) {
 const findRegions = async function(region) {
     let res = await fetch(`https://restcountries.eu/rest/v2/region/${region}`);
     let data = await res.json();
-    for(var i=0; i<data.length; i++){
+    for(var i=data.length-1; i>=0; i--){
+        let name, flag, population, region, capital;
+        name = data[i].name;
+        flag = data[i].flag;
+        population = data[i].population;
+        region = data[i].region;
+        capital = data[i].capital;
+        generateHtml(flag, population, region, name, capital);
+    }
+}
+
+const allCountries = async function() {
+    let res = await fetch(`https://restcountries.eu/rest/v2/all`);
+    let data = await res.json();
+    for(var i=data.length-1; i>=0; i--){
         let name, flag, population, region, capital;
         name = data[i].name;
         flag = data[i].flag;
@@ -241,4 +255,6 @@ function myFunction_set_light() {
 }
 
 // Load in Europe countries on load
-findRegions('Europe');
+// findRegions('Europe');
+
+allCountries();

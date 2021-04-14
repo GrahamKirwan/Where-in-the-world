@@ -33,6 +33,10 @@ body {
 .container {
     max-width: 1400px;
     margin: 0 auto;
+
+    @media(max-width: 1400px) {
+        padding: 0 20px;
+    }
 }
 
 header {
@@ -50,6 +54,10 @@ header {
     h1 {
         font-size: 2.5rem;
         color: var(--black);
+
+        @media(max-width: 520px) {
+            font-size: 2rem;
+        }
     }
 
     .theme {
@@ -63,6 +71,10 @@ header {
             i {
                 padding-right: .3rem;
             }
+
+            @media(max-width: 520px) {
+                font-size: 1.5rem;
+            }
         }
     }
 }
@@ -74,6 +86,10 @@ header {
     .container{
         display: flex;
         justify-content: space-between;
+
+        @media(max-width: 850px) {
+            flex-direction: column;
+        }
     }
 
     &_search {
@@ -101,6 +117,9 @@ header {
             color: var(--dark-grey);
             background-color: var(--white);
 
+            @media(max-width: 520px) {
+                width: 100%;
+            }
         }
     }
 
@@ -122,6 +141,11 @@ header {
                 padding-left: 3rem;
                 font-size: 1.1rem;
             }
+        }
+
+        @media(max-width: 850px) {
+            margin-top: 2rem;
+            display: inline-block;
         }
     }
 
@@ -147,8 +171,16 @@ header {
                 padding-bottom: 0;
             }
         }
+
+        @media(max-width: 850px) {
+            width: 166.39px;
+        }
     }
 
+}
+
+.inputs_filters_parent {
+    position: relative;
 }
 
 .displayed {display: none;}
@@ -168,7 +200,7 @@ header {
     }
 
     &_card {
-        width: 21%;
+        // width: 21%;
         background-color: var(--white);
         border-radius: 5px;
         overflow: hidden;
@@ -207,6 +239,16 @@ header {
                 font-size: 1.5rem;
                 padding-bottom: .7rem;
             }
+        }
+
+        @media(max-width: 850px) {
+            width: calc(100% * (1/2) - 4%);
+
+        }
+
+        @media(max-width: 520px) {
+            width: 100%;
+            margin-bottom: 5rem;
         }
     }
 }
@@ -253,6 +295,10 @@ header {
             img {
                 width: 100%;
             }
+
+            @media(max-width: 700px) {
+                width: 100%;
+            }
         }
 
         &_right {
@@ -272,6 +318,16 @@ header {
                 p {
                     font-size: 1.8rem;
                     padding-bottom: 1.3rem;
+                }
+
+                &--right {
+                    @media(max-width: 550px) {
+                        margin-top: 6rem;
+                    }
+                }
+
+                @media(max-width: 550px) {
+                    flex-direction: column;
                 }
             }
 
@@ -301,6 +357,14 @@ header {
 
                 }
             }
+
+            @media(max-width: 700px) {
+                width: 100%;
+            }
+        }
+
+        @media(max-width: 700px) {
+            flex-direction: column;
         }
     }
 }
