@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/GrahamKirwan/Where-in-the-world)
-- Live Site URL: [Add live site URL here](https://where-in-the-world-xi.vercel.app/)
+- Solution URL: [https://github.com/GrahamKirwan/Where-in-the-world](https://github.com/GrahamKirwan/Where-in-the-world)
+- Live Site URL: [https://where-in-the-world-xi.vercel.app/](https://where-in-the-world-xi.vercel.app/)
 
 ## My process
 
@@ -51,6 +51,7 @@ Users should be able to:
 
 ### What I learned
 
+For toggable light/dark themes we can grab root css varibles and update the values
 
 ```js
 function myFunction_set_dark() {
