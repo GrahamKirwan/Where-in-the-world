@@ -13,7 +13,7 @@ const regionFilter = document.querySelector('.inputs_filter');
 const apiCall = async function(country) {
     let res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
     let data = await res.json();
-    let flag = data[0].flag;
+    let flag = data[0].flags.png;
     let population = data[0].population;
     let region = data[0].region;
     let capital = data[0].capital;
@@ -26,8 +26,8 @@ const findRegions = async function(region) {
     let data = await res.json();
     for(var i=data.length-1; i>=0; i--){
         let name, flag, population, region, capital;
-        name = data[i].name;
-        flag = data[i].flag;
+        name = data[i].name.common;
+        flag = data[i].flags.png;
         population = data[i].population;
         region = data[i].region;
         capital = data[i].capital;
@@ -40,8 +40,8 @@ const allCountries = async function() {
     let data = await res.json();
     for(var i=data.length-1; i>=0; i--){
         let name, flag, population, region, capital;
-        name = data[i].name;
-        flag = data[i].flag;
+        name = data[i].name.common;
+        flag = data[i].flags.png;
         population = data[i].population;
         region = data[i].region;
         capital = data[i].capital;
@@ -54,18 +54,18 @@ const countryInfo = async function(country) {
     let data = await res.json();
 
         let name, flag, population, region, capital, nativeName, subRegion, topLevelDomain, currencies, languages, borders;
-        name = data[0].name;
+        name = data[0].name.common;
         name = name.charAt(0).toUpperCase() + name.slice(1);
-        nativeName = data[0].nativeName;
+        nativeName = data[0].name.common;
         subRegion = data[0].subregion;
-        flag = data[0].flag;
+        flag = data[0].flags.png;
         population = data[0].population;
         region = data[0].region;
         capital = data[0].capital;
-        topLevelDomain = data[0].topLevelDomain[0];
-        currencies = data[0].currencies[0].name;
+        topLevelDomain = data[0].tld[0];
+        // currencies = data[0].currencies[0].name;
         languages = data[0].languages;
-        borders = data[0].borders;
+        borders = data[0].borders[0];
         borders = await apiCallBorder(borders);
         generateInfoHtml(flag, population, region, name, capital, currencies, topLevelDomain, nativeName, subRegion, languages, borders)
     
