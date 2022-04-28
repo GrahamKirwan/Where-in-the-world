@@ -11,7 +11,7 @@ const regionFilter = document.querySelector('.inputs_filter');
 
 
 const apiCall = async function(country) {
-    let res = await fetch(`https://restcountries.eu/rest/v2/name/${country}`);
+    let res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
     let data = await res.json();
     let flag = data[0].flag;
     let population = data[0].population;
@@ -22,7 +22,7 @@ const apiCall = async function(country) {
 }
 
 const findRegions = async function(region) {
-    let res = await fetch(`https://restcountries.eu/rest/v2/region/${region}`);
+    let res = await fetch(`https://restcountries.com/v3.1/region/${region}`);
     let data = await res.json();
     for(var i=data.length-1; i>=0; i--){
         let name, flag, population, region, capital;
@@ -36,7 +36,7 @@ const findRegions = async function(region) {
 }
 
 const allCountries = async function() {
-    let res = await fetch(`https://restcountries.eu/rest/v2/all`);
+    let res = await fetch(`https://restcountries.com/v3.1/all`);
     let data = await res.json();
     for(var i=data.length-1; i>=0; i--){
         let name, flag, population, region, capital;
@@ -50,7 +50,7 @@ const allCountries = async function() {
 }
 
 const countryInfo = async function(country) {
-    let res = await fetch(`https://restcountries.eu/rest/v2/name/${country}`);
+    let res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
     let data = await res.json();
 
         let name, flag, population, region, capital, nativeName, subRegion, topLevelDomain, currencies, languages, borders;
@@ -222,7 +222,7 @@ const apiCallBorder = async function(borders) {
     let stringHtml = '';
 
     for(let i=0; i<borders.length; i++){
-        let res = await fetch(`https://restcountries.eu/rest/v2/alpha/${borders[i]}`);
+        let res = await fetch(`https://restcountries.com/v3.1/alpha/${borders[i]}`);
         let data = await res.json();
         names.push(data.name);
     }
